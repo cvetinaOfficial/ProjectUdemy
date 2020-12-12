@@ -1,0 +1,39 @@
+<div class="container-fluid bg-light" style="box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+    z-index: 1010;">
+        <div class="row justify-content-start align-items-center mr-5 ml-5" style="min-height: 70px;">
+            <div class="col-md-6 text-center">
+                <nav class="nav">
+                    <a class="navbar-brand" href="#" style="color: #000000a1 !important;">
+                        <img src="assets/img/icons/udemy-1.svg" width="30" height="30" class="d-inline-block align-top"
+                            alt="">
+                        demy
+                    </a>
+
+                    <a class="nav-link" href="categories.html">Categories</a>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2 ml-5" style="border-radius: 22px;" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-danger my-2 my-sm-0" style="border-radius: 22px;"
+                            type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="button" class="btn btn-outline-danger" id="login" onClick='login()'>Login</button>
+                <button type="button" class="btn btn-outline-danger" id="register" onClick='register()'>Register</button>
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function register(){
+    	window.location.href = "register.html";
+    }
+    
+    function login(){
+    	window.location.href = "login.html";
+    }
+	
+
+</script>

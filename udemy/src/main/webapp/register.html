@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Udemy</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid bg-light" style="box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+    z-index: 1010;">
+        <div class="row justify-content-start align-items-center mr-5 ml-5" style="min-height: 70px;">
+            <div class="col-md-6 text-center">
+                <nav class="nav">
+                    <a class="navbar-brand" href="#" style="color: #000000a1 !important;">
+                        <img src="assets/img/icons/udemy-1.svg" width="30" height="30" class="d-inline-block align-top"
+                            alt="">
+                        demy
+                    </a>
+
+                    <a class="nav-link" href="categories.html">Categories</a>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2 ml-5" style="border-radius: 22px;" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-danger my-2 my-sm-0" style="border-radius: 22px;"
+                            type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="button" class="btn btn-outline-danger" id="login">Login</button>
+                <button type="button" class="btn btn-outline-danger" id="register">Register</button>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex" style="flex: 1 0 auto;">
+        <div class="register-box" style="border-radius: 6px;
+        color: #29303b;
+        width: 380px; margin: 24px auto;
+    max-width: 100%;">
+            <div id="auth-to-udemy-title" class="loginbox-v4__header" style="    border-bottom: solid 1px #dedfe0;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            color: #29303b;
+            display: block;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 24px 64px 24px 24px;">
+                Register to Udemy !
+            </div>
+            <div class="register-content" style="padding: 24px 24px 16px; box-sizing: border-box;">
+                <form id="register-form">
+                 <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" required class="form-control" name="username" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input type="text" required class="form-control" name="firstName" id="firstName" placeholder="Enter firstname">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" required class="form-control" name="lastName" id="lastName" placeholder="Enter lastname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control"  name="email" id="email" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                        <small id="emailHelp" required class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagePath">Image path</label>
+                        <input type="text" class="form-control" name="imagePath" id="imagePath" placeholder="Enter image path">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" required class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPass">Confirm password</label>
+                        <input type="password" required class="form-control" name="confirmPass" id="confirmPass" placeholder="Confirm password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="tearms-of-use">
+                        <label class="form-check-label" for="tearms-of-use">Agree with Tearms of use</label>
+                    </div>
+                    <button type="submit" class="btn btn-outline-danger mt-3">Register</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+    	
+    	toastr.options = {
+		        'closeButton': true,
+		        'debug': false,
+		        'newestOnTop': false,
+		        'progressBar': false,
+		        'positionClass': 'toast-top-right',
+		        'preventDuplicates': false,
+		        'showDuration': '3000',
+		        'hideDuration': '3000',
+		        'timeOut': '5000',
+		        'extendedTimeOut': '1000',
+		        'showEasing': 'swing',
+		        'hideEasing': 'linear',
+		        'showMethod': 'fadeIn',
+		        'hideMethod': 'fadeOut',
+		    }
+    	
+    	document.getElementById('register').onclick = function register(){
+	    	window.location.href = "register.html";
+	    }
+	    
+	 	document.getElementById('login').onclick = function login(){
+	    	window.location.href = "login.html";
+	    }
+    	
+    	$("#register-form").bind('submit', function (e) {
+    		e.preventDefault();
+    		
+    		$("#register-form").validate({
+    			rules: {
+    			    firstName: {
+    			    	required: true
+    			    },
+    			    lastName: {
+    			    	required: true
+    			    },
+    			    username: {
+    			    	required: true,
+    			    	minlength: 5
+    			    },
+    			    password: {
+    			    	required: true,
+    			    	minlength: 5
+    			    },
+    			    email: {
+    			      required: true,
+    			      email: true
+    			    },
+    			    confirmPass: {
+    			    	required: true,
+    			    	minlength: 5,
+    			    	equalTo: '#password'
+    			    }
+    			  },
+    			  messages: {
+    				    email: {
+    				      required: "We need your email address to contact you",
+    				      email: "Your email address must be in the format of name@domain.com"
+    				    },
+    				    username: {
+    				    	required: "Username is required",
+    				    	minlength: "Username must contain at least 5 characters"
+    				    },
+    				    password: {
+    				    	required: "Password is required",
+    				    	minlength: "Password must contain at least 5 symbols"
+    				    },
+    				    confirmPass:{
+    				    	required: "Confirm password is required",
+    				    	minlength: "Confirmation password must contain at least 5 symbols",
+    				    	equalTo: "Confirmation password must match your password"
+    				    }
+    				  },
+    				  submitHandler: function(form){
+    					  $.ajax({
+  				            url: "register",
+  				            type: "POST",
+  				            data: {
+  								username: $('#username').val(),
+  			                    firstName: $('#firstName').val(),
+  			                    lastName: $('#lastName').val(),
+  			                    email: $('#email').val(),
+  								imagePath: $('#imagePath').val(),
+  								password: $('#password').val(),
+  								confirmPass: $('#confirmPass').val()
+  				            },
+  					    	complete: function(data){
+  					    		if(data.status == 200){
+  					    			toastr.options.onHidden = function() 
+									{ 
+										window.location.href = "login.html";
+									}
+  									toastr.success("Successfully registered user!");
+  					    		}
+  					    		
+  					    		if(data.status == 400){
+  			        					toastr.error("Form data is invalid!");
+  								}
+  					    		},
+  					    		fail: function(){
+  			        					toastr.error("Error occured on attempt to register user!");
+  					    		}
+  				            })
+  				          }}
+    				)});
+		
+    });
+		
+
+</script>
+</body>
+</html>

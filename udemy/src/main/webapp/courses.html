@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Udemy</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+	<div class="container-fluid bg-light"
+		style="box-shadow: 0 2px 4px rgba(0, 0, 0, .08), 0 4px 12px rgba(0, 0, 0, .08); z-index: 1010;">
+		<div class="row justify-content-start align-items-center mr-5 ml-5"
+			style="min-height: 70px;">
+			<div class="col-md-6 text-center">
+				<nav class="nav">
+					<a class="navbar-brand" href="#"
+						style="color: #000000a1 !important;"> <img
+						src="assets/img/icons/udemy-1.svg" width="30" height="30"
+						class="d-inline-block align-top" alt=""> demy
+					</a> <a class="nav-link" href="categories.html">Categories</a>
+				</nav>
+			</div>
+			<div class="col-md-6 text-right">
+				<button type="button" class="btn btn-outline-danger" id="logout">Logout</button>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center mb-3 mt-3">
+			<div class="col-md-8">
+				<h1>Category Name</h1>
+				<h2>Courses to get you started</h2>
+			</div>
+		</div>
+		<div class="modal fade" id="add-course-modal" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Add course</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="name">Course Name:</label> <input type="text"
+								class="form-control" id="name" placeholder="Enter course name">
+						</div>
+						<div class="form-group">
+							<label for="videoPath">Video path:</label> <input type="text"
+								class="form-control" id="videoPath"
+								placeholder="Enter video path:">
+						</div>
+						<div class="form-group">
+							<label for="imagePath">Image path:</label> <input type="text"
+								class="form-control" id="imagePath"
+								placeholder="Enter image path:">
+						</div>
+						<div class="form-group">
+							<label for="price">Price:</label> <input type="text"
+								class="form-control" id="price"
+								placeholder="Enter course price:">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="add-course">Save
+							changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="update-course-modal" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Update
+							category</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="name">Course Name:</label> <input type="text"
+								class="form-control" id="updateCourseName"
+								placeholder="Enter category name">
+						</div>
+						<div class="form-group">
+							<label for="imagePath">Image path:</label> <input type="text"
+								class="form-control" id="updateCourseImagePath"
+								placeholder="Enter image path:">
+						</div>
+						<div class="form-group">
+							<label for="updateVideoPath">Video path:</label> <input
+								type="text" class="form-control" id="updateCourseVideoPath"
+								placeholder="Enter category name">
+						</div>
+						<div class="form-group">
+							<label for="updatePrice">Price:</label> <input type="text"
+								class="form-control" id="updateCoursePrice"
+								placeholder="Enter image path:">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="update-modal">Update</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-3 justify-content-end">
+			<div class="col-md-6 text-right">
+				<button class="btn btn-outline-danger" id="switch-layout">Switch
+					to row layout</button>
+				<button class="btn btn-outline-danger" data-toggle="modal"
+					data-target="#add-course-modal" id="add-course-btn">Add
+					course</button>
+			</div>
+		</div>
+		<div class="row mt-3" id="courses"></div>
+	</div>
+
+
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous">
+    </script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous">
+    </script>
+	<script>
+        $(document).ready(function () {
+        	parameter = JSON.parse(window.localStorage.getItem('categoryId'));
+        	
+        	debugger;
+        	async function loadCoursesByCategoryId(){
+            		return $.ajax({
+        	            url: "/course/all",
+        	            method : "GET",
+        	            data: {
+        	            	id: parameter
+        	            },
+        		    	complete: function(data){
+        		    		if(data != null){
+        		    			return data.responseJSON;
+        		    			toastr.success("Successfully get course!");
+        		    		}
+        		    		
+        		    		if(data.status == 404){
+        		    			toastr.error("No such category!");
+        		    		}
+        		    		},
+        		    		fail: function(){
+              					toastr.error("Error occured on attempt to get category!");
+        		    		}
+        	            });
+        	}
+
+            $('#add-course-btn').click(function () {
+                $('#myModal').modal('show');
+            });
+            
+            $('#logout').on('click', function(){
+    			$.ajax({
+    				url: "logout",
+    				method: "POST",
+    				complete : function(data){
+    					if(data.status == 401){
+    						alert("ERROR!");
+    					}
+    					
+    					window.location.href = "login.html";
+    					
+    				}
+    			})
+    		});
+            
+            
+            function initCourses(result) {
+            	debugger;
+            	result.forEach(item => {
+                let list = document.getElementById("courses");
+                let col6 = document.createElement("div");
+                col6.className = "col-md-6 mb-2 flex-column";
+
+                let cardElement = document.createElement("div");
+                cardElement.className = "card";
+                let imgContainer = document.createElement("div");
+                imgContainer.className = "w-100 p-3";
+                let img = document.createElement("img");
+                img.setAttribute('src', item.imagePath);
+                img.className = "img-thumbnail";
+                imgContainer.appendChild(img);
+                cardElement.appendChild(imgContainer);
+
+                let cardBody = document.createElement("div");
+                cardBody.className = "card-body ml-3";
+                let name = document.createElement("h5");
+                name.className = "mt-2";
+                name.textContent = item.name;
+                let ratingContainer = document.createElement("div");
+                ratingContainer.className = "rating";
+                for (let index = 0; index < 5; index++) {
+                    let star = document.createElement('span');
+                    let starIsChecked = "checked";
+                    star.className = "fa fa-star" + ' ' + starIsChecked;
+                    ratingContainer.appendChild(star);
+                }
+
+                let divContainerPrice = document.createElement("div");
+                divContainerPrice.className = "price-container";
+                let spanPrice = document.createElement("span");
+                spanPrice.className = "price";
+                spanPrice.textContent = item.price;
+                let smallEl = document.createElement('small');
+                smallEl.style.textDecoration = "line-through";
+                smallEl.textContent = " $20";
+                spanPrice.appendChild(smallEl);
+                divContainerPrice.appendChild(spanPrice);
+
+                let divContainerSubscribers = document.createElement("div");
+                divContainerSubscribers.className = "subscribers-container";
+                let spanSubscribers = document.createElement("span");
+                spanSubscribers.textContent = "Subscribers:";
+                let spanSubscribersNumber = document.createElement("span");
+                spanSubscribersNumber.textContent = item.subscribers;
+                divContainerSubscribers.appendChild(spanSubscribers);
+                divContainerSubscribers.appendChild(spanSubscribersNumber);
+
+                let divContainerButtons = document.createElement("div");
+                divContainerButtons.className = "mt-3";
+                let editBtn = document.createElement("button");
+                editBtn.type = "button";
+                editBtn.className = "btn btn-danger mr-2";
+                editBtn.textContent = "Edit course";
+                editBtn.value = item.id;
+                editBtn.addEventListener('click',async function(event){
+                	let data = $(this).val();
+                	event.preventDefault();
+                	await getCourseById($(this).val());
+                });
+                let deleteBtn = document.createElement("button");
+                deleteBtn.type = "button";
+                deleteBtn.className = "btn btn-danger";
+                deleteBtn.textContent = "Delete course";
+                deleteBtn.value = item.id;
+                deleteBtn.addEventListener("click",async function (event){
+                	event.preventDefault();
+                	await deleteCourseById($(this).val());
+                });
+
+                divContainerButtons.appendChild(editBtn);
+                divContainerButtons.appendChild(deleteBtn);
+
+                cardBody.appendChild(name);
+                cardBody.appendChild(ratingContainer);
+                cardBody.appendChild(divContainerPrice);
+                cardBody.appendChild(divContainerSubscribers);
+                cardBody.appendChild(divContainerButtons);
+                cardElement.appendChild(cardBody);
+                col6.appendChild(cardElement);
+                list.appendChild(col6);
+            	});
+            }
+            
+            async function deleteCourseById(categoryId){
+        		$.ajax({
+    	            url: "/course/delete",
+    	            method : "DELETE",
+    	            data: {
+    	            	id: categoryId
+    	            },
+    		    	complete: function(data){
+    		    		if(data.status == 200){
+    		    			toastr.options.onHidden = function() 
+							{ 
+								window.location.reload();
+							}
+    		    			toastr.success("Successfully deleted course!");
+    		    			
+    		    		}
+    		    		
+    		    		if(data.status == 404){
+    		    			toastr.error("No such course!");
+    		    		}
+    		    		},
+    		    		fail: function(){
+          					toastr.error("Error occured on attempt to delete course!");
+    		    		}
+    	            })};
+            
+            function getCourseById(courseId){
+        		$.ajax({
+    	            url: "course",
+    	            method : "GET",
+    	            data: {
+    	            	id: courseId
+    	            },
+    		    	complete: function(data){
+    		    		debugger;
+    		    		if(data.responseJSON != null){
+    		    			toastr.success("Successfully get course!");
+    		    			openUpdateCourseModal(data.responseJSON);
+    		    		}
+    		    		
+    		    		if(data.status == 404){
+    		    			toastr.error("No such category!");
+    		    		}
+    		    		},
+    		    		fail: function(){
+          					toastr.error("Error occured on attempt to delete category!");
+    		    		}
+    	            })};
+    	            
+    	            function openUpdateCourseModal(result){
+    	            	$('#updateCourseName').val(result.name);
+    	            	$('#updateCourseImagePath').val(result.imagePath);
+    	            	$('#updateCoursePrice').val(result.price);
+    	            	$('#updateCourseVideoPath').val(result.videoPath);
+    	            	$('#update').val(result.id);
+    	            	
+    	            	$('#update-course-modal').modal('show');
+    	            	
+    	            	$('#update-modal').on('click',function(){
+    	            		let updatedName = $('#updateCourseName').val();
+        	            	let updatedImagePath = $('#updateCourseImagePath').val();
+        	            	let updateVideoPath = $('#updateCourseVideoPath').val(result.videoPath);
+        	            	let updatePrice = $('#updateCoursePrice').val(result.price);
+        	            	
+        	            	$.ajax({
+        	    	            url: "/course/update",
+        	    	            method : "PUT",
+        	    	            data: {
+        	    	            	id: result.id,
+        	    	            	imagePath: updatedImagePath,
+        	    	            	name: updatedName,
+        	    	            	videoPath: updateVideoPath,
+        	    	            	price: updatePrice,
+        	    	            	categoryId: parameter
+        	    	            },
+        	    		    	complete: function(data){
+        	    		    		if(data.status == 200){
+        	    		    			toastr.options.onHidden = function() 
+        								{ 
+        	    		    				$('#update-course-modal').modal('hide');
+        									window.location.reload();
+        								}
+        	    		    			toastr.success("Successfully updated course!");
+        	    		    		}
+        	    		    		
+        	    		    		if(data.status == 404){
+        	    		    			$('#update-course-modal').modal('hide');
+        	    		    			toastr.error("No corresponding category!");
+        	    		    		}
+        	    		    		},
+        	    		    		fail: function(){
+        	    		    			$('#update-course-modal').modal('hide');
+        	          					toastr.error("Error occured on attempt to update category!");
+        	    		    		}
+        	    	            })
+    	            	});
+    	            	
+    	            }
+            
+            $('#add-course').click(function(){
+        		let imagePath = $('#imagePath').val();
+        		let name = $('#name').val();
+        		let videoPath = $('#videoPath').val();
+        		let price = $('#price').val();
+        		
+        		$.ajax({
+			            url: "/course/add",
+			            type: "POST",
+			            data: {
+		                    imagePath: imagePath,
+							name: name,
+							videoPath: videoPath,
+							price: price,
+							id: parameter
+			            },
+				    	complete: function(data){
+				    		if(data.status == 201){
+				    			toastr.options.onHidden = function() 
+								{ 
+				    				$('#add-course-modal').modal('hide');
+									window.location.reload();
+								}
+								toastr.success("Successfully added course!");
+				    		}
+				    		if(data.status == 404){
+				    			toastr.options.onHidden = function() 
+								{ 
+				    				$('#add-course-modal').modal('hide');
+								}
+		        				toastr.error("No corresponding category found!");
+							}
+				    		},
+				    		fail: function(){
+				    			toastr.options.onHidden = function() 
+								{ 
+				    				$('#add-course-modal').modal('hide');
+								}
+		        				toastr.error("Error occured on attempt to add course!");
+				    		}
+			            })});
+
+            
+
+            $("#switch-layout").on('click', function () {
+                let layout = $('.card').css('flex-direction');
+                if (layout === "column") {
+                    $('.card').css('flex-direction', 'row');
+                    $(this).text('Switch to column layout');
+                } else {
+                    $('.card').css('flex-direction', 'column');
+                    $(this).text('Switch to row layout');
+                }
+            });
+            
+            let loadGetCourses = async function(){
+        		  let result = await loadCoursesByCategoryId();
+        		  await initCourses(result);
+        	  }
+            
+
+        	
+        	loadGetCourses();
+
+        });
+    </script>
+</body>
+
+</html>
